@@ -1,0 +1,7 @@
+<h1>All Drinks</h1>
+<% @drinks.each do |drink| %>
+  <p><strong>Name:</strong> <%= drink.name %></p>
+  <p><strong>Category:</strong> <%= drink.category.name %></p>
+  <p><strong>User:</strong> <%= drink.user.name %></p>
+  <hr>
+<% end %>
