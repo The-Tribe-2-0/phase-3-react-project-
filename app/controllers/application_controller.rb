@@ -1,9 +1,14 @@
-class ApplicationController < Sinatra::Base
-  set :default_content_type, 'application/json'
-  
-  # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
-  end
+require_relative './controllers/drinks_controller'
+require_relative './controllers/categories_controller'
 
+class ApplicationController < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
+
+  set :views, './app/views'
+  set :public_folder, './public'
+
+  get '/' do
+    redirect '/drinks'
+  end
 end
+
